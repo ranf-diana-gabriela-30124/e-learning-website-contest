@@ -10,5 +10,7 @@
 
 ## Technical Overview
 - **JavaScript:** Manages quiz flow, evaluates answers, tracks scores, and provides explanations.  
-- **HTML/CSS:** Structures and styles the learning environment, including menus, chapters, and question buttons.  
+- **HTML/CSS:** Structures and styles the learning environment, including menus, chapters, and question buttons.
+
+![Home Page](Home_page_image.jpg)  
 
