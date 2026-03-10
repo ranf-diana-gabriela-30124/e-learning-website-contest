@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style_capitole.css">
+</head>
+
+<body>
+    <div class="containter">
+        <div class="white-rectangle">
+            <div class="style_text_heading"> Capitolul 12 - recursivitate </div>
+        </div>1
+        <label>
+            <input type="checkbox">
+            <div class="toggle"></div>
+            <div class="slide">
+                <h1>Menu</h1>
+                <ul>
+                    <li><a href="home_page.html">home</a></li>
+                    <li><a href="mediu_de_invatare.html">Mediu de invatare</a> </li>
+                    <li><a href="test_level.html">Your level in C++</a></li>
+                </ul>
+            </div>
+        </label>
+    </div>
+    <div class="row">
+            <div class="rectangle_code">
+                <ul class="square">
+                    <li> Algoritm factorial  </li>
+                    <pre>
+    long factorial(int n) 
+    { 
+        if (n==0 || n==1) 
+            return 1;
+        return n * factorial(n-1);
+    }
+                    </pre>
+                <p> Mod de executie: <br> <br>
+                    Se apeleaza in main functia: factorial(x). 
+                    Daca x este diferit de 0 si 1, se trece la operatia de inmultire mediu_de_invatare
+                    x-ul curent si se apeleaza functia factorial(x-1). Acest proces are loc pana in momentul
+                    in care x este 1 sau 0 , returnandu-se astfel 1 ( 0! = 1!). Apoi algoritmul  intoarce pe rand rezultatele
+                    pana se ajunge la x!, fiind returnat rezultatul final. 
+                </p>
+                </ul>
+        </div>  
+            <div class="rectangle_code">
+                <ul class="square">
+                    <li> Algoritm Fibonnaci recursiv </li>
+                    <pre>
+    int fib(int n) 
+    {
+        if (n <= 1) 
+            return n;
+        return fib(n-1) + fib(n-2);
+    }
+                    </pre>
+                    <p> Mod de executie: <br><br>
+                        Se apeleaza in main functia: fib(x). 
+                        Functia fib calculează termenul n din seria 
+                        Fibonacci folosind recursivitatea. Dacă n este 0 sau 1, returneaza n. 
+                        In caz contrar, returneaza suma dintre fib(n-1) și fib(n-2), 
+                        continuand apelurile recursive pana ajunge la cazurile de baza. 
+
+                    </p>
+                </ul>
+            </div>
+            <div class="rectangle_code">
+                <ul class="square">
+                    <li> Algoritmul lui Euclid recursiv ( CMMDC ) </li>
+                    <pre>
+    int cmmdc(int x, int y) 
+    {
+        if (y == 0) return x;
+        return cmmdc(y, x % y);
+    }
+                    </pre>
+                    <p> Mod de executie: <br><br>
+                        Functia cmmdc calculeaza cel mai mare divizor comun (CMMD)
+                        al numerelor x și y folosind algoritmul lui Euclid. 
+                        Dacă y este 0, returneaza x. In caz contrar, apeleaza 
+                        recursiv cmmdc(y, x % y) pana cand y devine 0.
+                    </p>
+                </ul>
+            </div>
+        </div>
+  
+    <div class="spacer"></div>
+    <div class="containter">
+        <div class="style_text_subtitle">Definitia recursivitatii</div>
+        <div class="teorie">
+            <ul class="square">
+            <p>
+                Recursivitatea este o tehnica de programare in care o functie 
+                se apeleaza pe ea insasi pentru a rezolva o problema, de obicei 
+                cu scopul de a simplifica solutionarea acesteia prin impartirea 
+                in subprobleme mai mici și similare. 
+                Fiecare apel recursiv adauga un nou cadru pe stiva de apeluri, 
+                consumand memorie proportional cu adancimea recursivitatii. 
+                Recursivitatea poate simplifica codul, dar poate fi ineficienta
+                din punct de vedere al timpului și memoriei dacă subproblemele 
+                nu sunt optimizate, riscand chiar un stack overflow pentru
+                apeluri excesive. Utilizarea unei abordări iterative poate 
+                imbunatati eficienta.
+            </p>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

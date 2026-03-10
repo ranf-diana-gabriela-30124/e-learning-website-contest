@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style_home.css">
+    <title>Exercitii C++</title>
+    <style>
+        body {
+            background-image: url("poza1.jpg");
+            background-size: cover;
+            margin: 0;
+        }
+        .white_rectangle {
+            width: 100%;
+            height: 70px;
+            background-color: rgba(255, 255, 255, 0.5);
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        .quiz_rectangle {
+            width: 700px;
+            height: 600px;
+            background-color: rgba(64, 64, 161, 0.5);
+            border-radius: 20px;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 3px solid rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            margin-top: 30px;
+        }
+        .quiz_title {
+            font-family: 'Franklin Gothic Medium';
+            color: #FFDAB9;
+            font-size: 40px;
+            margin-top: 10px;
+        }
+        .question {
+            font-family: 'Franklin Gothic Medium';
+            color: #FFDAB9;
+            font-size: 15px;
+            margin-top: 20px;
+            text-align: left;
+        }
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+            font-family: 'Franklin Gothic Medium';
+            font-size: 20px;
+        }
+        .navigation {
+            margin-top: 20px;
+        }
+        .navigation button {
+            margin-right: 10px;
+            background: #FFDAB9;
+            font-family: 'Franklin Gothic Medium';
+            font-size: 20px;
+            color: black;
+            width: 150px;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .navigation button:hover {
+            background: #222;
+            color: #fff;
+        }
+        .code{
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="white_rectangle"></div>
+    <div class="quiz_rectangle">
+        <div class="quiz_title">Exercitii C++ siruri de caractere</div>
+        <div class="question">
+            <p id="question-text"></p> <br> 
+            <div class="code"> <pre id="code-block"> </pre> </div>
+            
+        </div>
+        <input type="text" id="answer" placeholder="Introduceți răspunsul aici" style="width: 90%; padding: 10px; border-radius: 4px; font-size: 20px; margin-bottom: 10px;">
+        <button onclick="checkAnswer()" style="background: #FFDAB9; font-family: 'Franklin Gothic Medium'; font-size: 20px; color: black; padding: 10px; border-radius: 4px; cursor: pointer; transition: 0.3s;">Verificare</button>
+        <div id="result" class="result"></div>
+        <div class="navigation">
+            <button onclick="prevQuestion()">Întrebarea anterioară</button>
+            <button onclick="nextQuestion()">Întrebarea următoare</button>
+        </div>
+    </div>
+
+    <script>
+        const questions = [
+            {
+                text: "Ce se va afișa în urma executării secvenței următoare de program, în care variabila `c` memorează un șir cu cel mult 20 de caractere, iar variabila `i` este de tip întreg?",
+                code: `char c[]="abracadabra";\ni=6;\ncout<<c[i]<<c[i+1]<<" ";\nwhile (i>=0)\n{\n    cout<<c[i];\n    i=i-1;\n}`,
+                answer: "da dacarba"
+            },
+            {
+                text: "Ce se va afișa în urma executării secvenței următoare de program?",
+                code: `int x = 5;\nint y = 10;\ncout << x + y << " " << x * y ;`,
+                answer: "15 50"
+            },
+            {
+                text: "Scrieţi ce se afişează pe ecran în urma executării secvenţei de program de mai jos, în care variabilele s și t memorează şiruri cu cel mult 12 caractere, iar variabila i este de tip întreg?",
+                code: `char s[13]="abcdefghoid";\ni=0;\ncout<<strlen(s);\nwhile (i<strlen(s))\nif (strchr("aeiou",s[i])!=NULL){\nstrcpy(t,s+i+1);\nstrcpy(s+i,t);\n}\nelse i++;\ncout<<" "<<s;`,
+                answer: "11 bcdfghd"
+            },
+            {
+                text: "Ce se va afişa în urma executării secvenţei următoare, în care variabila c memorează un şir cu cel mult 20 de caractere, iar i este o variabilă de tip întreg?",
+                code: `char c[21]="tamara",*p;\nfor(i=0;i<strlen(c);i=i+1)\n{ p=strchr(c,'a');\ncout<<p-c;}`,
+                answer: "111111"
+            },
+            {
+                text: "Ce se afişează pe ecran în urma executării secvenţei de program scrisă mai jos, în care i este o variabilă de tip char?",
+                code: `for (i='a';i<='z';i++)\nif (strchr("info",i))\ncout<<i;`,
+                answer: "fino"
+            },
+            {
+                text: "Ce se afişează pe ecran în urma executării secvenţei de program alăturate, unde a și b sunt variabilă de tip şir de caractere?",
+                code: `strcpy(a,"informatica");\nstrcpy(b,a+5);\nstrcpy(a+2,b);\ncout<<a;`,
+                answer: "inmatica"
+            },
+            {
+                text:"Care vor fi valorile afişate după executarea secvenţei de program de mai jos?",
+                code: `char s1[20]="algoritm", s2[20]="bioritm",s3[20]="ritm";\nif (strlen(s1)< strlen(s2))\nstrcat(s3,s1);\nelse\nstrcat(s3,s2);\ncout<<s1<<' '<<s2<<' '<<s3;`,
+                answer: "algoritm bioritm ritmbioritm"
+            },
+            {
+                text:"În secvenţa următoare, fiecare dintre variabilele x şi s sunt de tipul şir de caracter, iar i este de tip întreg. Dacă variabilele x şi s memorează iniţial şirul absolvent, ce se va memora în variabila x în urma executării secvenţei următoare?",
+                code: `for(i=0; i<strlen(s); i++)\nif(strcmp(x, s+i)<0)\nstrcpy(x,s+i);`,
+                answer:"vent"
+            },
+            {
+                text:"Se consideră variabila s care memorează şirul de caractere CARACATITA. Ce valoare va avea șirul t după executarea instrucţiunii de mai jos?",
+                code: `strcpy(t,strstr(s,"TI"));`,
+                answer:"TITA"
+            },
+            {
+                text:"Indicați șirul afișat pe ecran în urma executării instrucțiunii următoare:",
+                code:"cout<<strstr(”veni,vidi,vici”,”vi”);",
+                answer: "vidi,vici"
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+
+        function displayQuestion(index) {
+            const question = questions[index];
+            document.getElementById('question-text').textContent = question.text;
+            document.getElementById('code-block').textContent = question.code;
+            document.getElementById('answer').value = '';
+            document.getElementById('result').textContent = '';
+        }
+
+        function checkAnswer() {
+            const userAnswer = document.getElementById('answer').value;
+            const resultElement = document.getElementById('result');
+            
+            if (userAnswer.trim() === questions[currentQuestionIndex].answer) {
+                resultElement.textContent = "Corect!";
+                resultElement.style.color = "green";
+            } else {
+                resultElement.textContent = "Greșit, mai încearcă!";
+                resultElement.style.color = "red";
+            }
+        }
+
+        function nextQuestion() {
+            if (currentQuestionIndex < questions.length - 1) {
+                currentQuestionIndex++;
+                displayQuestion(currentQuestionIndex);
+            }
+        }
+
+        function prevQuestion() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                displayQuestion(currentQuestionIndex);
+            }
+        }
+
+        displayQuestion(currentQuestionIndex);
+    </script>
+    <label>
+        <input type="checkbox">
+        <div class="toggle"></div>
+        <div class="slide">
+            <h1>Menu</h1>
+            <ul>
+                <li><a href="home_page.html" target="_blank">home</a></li>
+                <li><a href="mediu_de_invatare.html" target="_blank">Mediu de invatare</a> </li>
+                <li><a href="test_level.html">Your level in C++</a></li>
+            </ul>
+        </div>
+    </label>
+</body>
+</html>

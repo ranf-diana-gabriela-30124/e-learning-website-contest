@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        .picture{
+            width: 500px;
+            margin-top: 40px;
+        }
+    </style>
+<head>
+    <link rel="stylesheet" type="text/css" href="style_capitole.css">
+</head>
+
+<body>
+    <div class="containter">
+        <div class="white-rectangle">
+            <div class="style_text_heading"> Capitolul 9 - tablouri uni si bidimensionale </div>
+        </div>
+        <label>
+            <input type="checkbox">
+            <div class="toggle"></div>
+            <div class="slide">
+                <h1>Menu</h1>
+                <ul>
+                    <li><a href="home_page.html">home</a></li>
+                    <li><a href="mediu_de_invatare.html">Mediu de invatare</a> </li>
+                    <li><a href="test_level.html">Your level in C++</a></li>
+                </ul>
+            </div>
+        </label>
+    </div>
+    <div class="row"> 
+        <div class="rectangle_code">
+            <ul class="square">
+                <li> Tablouri unidimensionale</li>
+                <p> Un tablou unidimensional reprezinta o multime / un sir de valori care au acelasi tip de date ( int, char, double etc.).
+                    In urmatoarele paragrafe veti afla mai multe detalii despre declararea unui astfel de tablou si beneficiile sale.
+                </p><br>
+                <li>Declararea unui tablou unidimensional </li>
+                <p> tipDeBază denumire[Dimensiune]; <br>
+                    Exemplu: int vector[100]; ( acest tablou poate stoca maxim 100 de elemente )
+                </p><br>
+                <li>Pozitiile elementelor din vector</li>
+                <p>Fiecare element ocupa o anumita pozitie in memorie, identificata cu ajutorul indiciilor. Astfel, vector[0]
+                    reprezinta primul element al unui tablou cu n elemente, iar vector[n-1] este ultimul element.
+                </p><br>
+                <li>Citirea unui vector</li>
+                <p>Indiferent daca tabloul este citit din fisier sau de la tastatura, el trebuie parcurs
+                    element cu element. </p>
+            </ul>
+        </div>
+
+        <div class="rectangle_code">
+            <ul class="square">
+                <p>Astfel se realizeaza citirea si in urmatorul exemplu, citindu-se initial dimensiunea tabloului: <br>
+                </p>
+                <pre>
+    int a[100];
+    cin >> n;
+    for(int i = 0 ; i &lt; n ; i ++)
+        cin >> a[i];
+                </pre>
+                <li>Afisarea unui tablou unidimensional</li>
+            <p> Afisarea se realizeaza asemanator cu citirea, inlocuind 'cin' cu 'cout' si afisand de asemenea cate un spatiu intre valori</p>
+            <pre>
+for(int i = 0 ; i &lt; n ; i ++)
+cout &lt;&lt; a[i] &lt;&lt; ' ';
+            </pre>
+            <li> Initializarea tablourilor unidimensionale</li>
+            <pre>
+int a[10] = {0}; // initializeaza toate elementele cu 0 
+int b[]={5, 10, 15, 20}; // tablou unidimensional cu 4 elemente si n=3
+            </pre>
+            </ul>
+            
+        </div>
+
+        <div class="rectangle_code">
+            <ul class="square">
+                <li> Tablouri bidimensionale </li>
+                <p> Aceste tablouri sunt asemanatoare cu primele, insa difera prin dimensiunea lor. Tablourile bidimensionale
+                    sunt asemenea matriciilor, avand un numar n de linii si un numar m de coloane. Fiecare matrice se parcurge
+                    cu ajutorul variabilelor i ( ptr. linii ) si j (ptr. coloane). Astfel elementul de pe linia 2, coloana 3 va fi
+                    A[1][2], numaratoarea incepand de la 0. 
+                </p>
+                <br>
+                <li> Citirea unei matrici </li>
+                <pre>
+    double mat[100][100];
+    int n, m;
+    cin >> n >> m;
+    for( int i=0; i<n; i++)
+        for( int j=0; j<m; j++)
+            cin>>a[i][j];
+                </pre>
+                <li>Parcurgerea unei linii</li>
+                <p> for(int j = 0 ; j < m ; j ++) { ... }</p> <br>
+                <li>Parcurgerea unei coloane</li>
+                <p> for(int i = 0 ; i < n ; i ++) { ... }</p>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

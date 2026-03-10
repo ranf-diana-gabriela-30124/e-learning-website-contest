@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<style>
+    .picture {
+        height: 300px;
+        margin: 20px;
+    }
+</style>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style_capitole.css">
+</head>
+
+<body>
+    <div class="containter">
+        <div class="white-rectangle">
+            <div class="style_text_heading"> Capitolul 6 - subprograme </div>
+        </div>
+        <label>
+            <input type="checkbox">
+            <div class="toggle"></div>
+            <div class="slide">
+                <h1>Menu</h1>
+                <ul>
+                    <li><a href="home_page.html">home</a></li>
+                    <li><a href="mediu_de_invatare.html">Mediu de invatare</a> </li>
+                    <li><a href="test_level.html">Your level in C++</a></li>
+                </ul>
+            </div>
+        </label>
+    </div>
+    <div class="row">
+        <div class="teorie">
+            <ul class="square">
+                <li> Structura unui subprogram: </li>
+                <pre>
+    tip_de_date_returnat nume_subprogram ( tip_date param1, .. )
+    {
+        ... instructiuni; ...
+        return ... ;
+    }
+                </pre>
+                <p>Componentele unui subprogram: </p><br>
+                <li> Antetul subprogramului </li>
+                <p> tip_de_date_returnat nume_subprogram ( tip_date param1, .. )</p>
+                <p> Descriere: antetul functiei este format din tipul variabilei care va fi
+                    returnat la sfarsitul functiei, numele subprogramului si apoi intre paranteze
+                    lista de parametrii transmisi. 
+                </p><br>
+                <li> Corpul functiei </li>
+                <p>
+                    Descriere: blocul de acolade in care se gasesc instructiunile propriu-zise
+                    care trebuie realizate.
+                </p> 
+                
+            </ul>
+        </div>
+        <div class="teorie">
+            <ul class="square">
+                <li> Observatie: </li> <br>
+                <p> Exista functii care nu returneaza nimic, ci doar fac
+                    un set de instructiuni intre acolade care nu sunt 
+                    accesibile in exteriorul subprogramului. Acestea sunt 
+                    de tip void. 
+                </p> <br>
+                <li> Cu ce ne ajuta subprogramele ?</li>
+                <p> Subprogramele conntribuie la o intelegere mai buna
+                    a codului, acesta fiind mai ordonat si structurat. 
+                    Astfel, functia main nu mai este aglomerata inutil, 
+                    realizandu-se doar apelurile la subprogramele necesare
+                    create de utilizator.  
+                </p>
+                </ul> 
+    </div>
+        <div class="rectangle_code">
+            <br> <br>
+           <img class="picture" src="programming_photo.jpg">`
+                
+        </div>
+    </div>
+    
+</body>
+
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style_home.css">
+    <title>Exerciții C++</title>
+    <style>
+        body {
+            background-image: url("poza1.jpg");
+            background-size: cover;
+            margin: 0;
+        }
+        .white_rectangle {
+            width: 100%;
+            height: 70px;
+            background-color: rgba(255, 255, 255, 0.5);
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        .quiz_rectangle {
+            width: 700px;
+            height: 600px;
+            background-color: rgba(64, 64, 161, 0.5);
+            border-radius: 20px;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 3px solid rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            margin-top: 30px;
+        }
+        .quiz_title {
+            font-family: 'Franklin Gothic Medium';
+            color: #FFDAB9;
+            font-size: 40px;
+            margin-top: 10px;
+        }
+        .question {
+            font-family: 'Franklin Gothic Medium';
+            color: #FFDAB9;
+            font-size: 15px;
+            margin-top: 20px;
+            text-align: left;
+        }
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+            font-family: 'Franklin Gothic Medium';
+            font-size: 20px;
+        }
+        .navigation {
+            margin-top: 20px;
+        }
+        .navigation button {
+            margin-right: 10px;
+            background: #FFDAB9;
+            font-family: 'Franklin Gothic Medium';
+            font-size: 20px;
+            color: black;
+            width: 150px;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .navigation button:hover {
+            background: #222;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="white_rectangle"></div>
+    <div class="quiz_rectangle">
+        <div class="quiz_title">Exercitii C++ tipuri de date</div>
+        <div class="question">
+            <p id="question-text"></p> <br>
+            <pre id="code-block"></pre>
+        </div>
+        <input type="text" id="answer" placeholder="Introduceți răspunsul aici" style="width: 90%; padding: 10px; border-radius: 4px; font-size: 20px; margin-bottom: 10px;">
+        <button onclick="checkAnswer()" style="background: #FFDAB9; font-family: 'Franklin Gothic Medium'; font-size: 20px; color: black; padding: 10px; border-radius: 4px; cursor: pointer; transition: 0.3s;">Verificare</button>
+        <div id="result" class="result"></div>
+        <div class="navigation">
+            <button onclick="prevQuestion()">Întrebarea anterioară</button>
+            <button onclick="nextQuestion()">Întrebarea următoare</button>
+        </div>
+    </div>
+
+    <script>
+        const questions = [
+            {
+                text: "Declarati intr-o linie de cod un carcater 'c' initializat cu litera 'A'",
+                code: ``,
+                answer: "char c='A';"
+            },
+            {
+                text: "Ce se afiseaza dupa aceasta secveta?",
+                code: `int a = 5;\ncout << (a == 5);`,
+                answer: "1"
+            },
+            {
+                text: "Ce se afiseaza dupa aceasta secveta?",
+                code: `double x = 3.25;\ncout<<(int)x; `,
+                answer: "3"
+            },
+            {
+                text: "Ce se afiseaza dupa aceasta secveta?",
+                code: `bool x, y, z;\nx = y = z = false;\ncout<<!y;`,
+                answer: "1"
+            },
+            {
+                text: "Ce se afiseaza dupa aceasta secveta?",
+                code: `double a = 7.0; \nint b=2;\ncout << a/b;`,
+                answer: "3.5"
+            },
+            {
+                text: "Ce se afiseaza dupa aceasta secveta?",
+                code: `bool a = (5 > 3);\ncout << a;`,
+                answer: "1"
+            },
+            {
+                text: "Ce se afiseaza dupa aceasta secveta?",
+                code: `int a = 10;\na -= 4;\ncout << a;`,
+                answer: "6"
+            },
+            {
+                text: "Ce se afiseaza dupa aceasta secveta?",
+                code: `bool b = false;\ncout << b;`,
+                answer: "0"
+            },
+            {
+                text: "Ce se afiseaza dupa aceasta secveta?",
+                code: `int a,b; a = b = 5; \ncout << (a != b);`,
+                answer: "0"
+            },
+            {
+                text: "Ce se afiseaza dupa aceasta secveta?",
+                code: `char ch = 'A' + 32;\ncout << ch;`,
+                answer: "a"
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+
+        function displayQuestion(index) {
+            const question = questions[index];
+            document.getElementById('question-text').textContent = question.text;
+            document.getElementById('code-block').textContent = question.code;
+            document.getElementById('answer').value = '';
+            document.getElementById('result').textContent = '';
+        }
+
+        function checkAnswer() {
+            const userAnswer = document.getElementById('answer').value.replace(/\s+/g, '');
+            const correctAnswer = questions[currentQuestionIndex].answer.replace(/\s+/g, '');
+            const resultElement = document.getElementById('result');
+            
+            if (userAnswer === correctAnswer) {
+                resultElement.textContent = "Corect!";
+                resultElement.style.color = "green";
+            } else {
+                resultElement.textContent = "Greșit, mai încearcă!";
+                resultElement.style.color = "red";
+            }
+        }
+
+        function nextQuestion() {
+            if (currentQuestionIndex < questions.length - 1) {
+                currentQuestionIndex++;
+                displayQuestion(currentQuestionIndex);
+            }
+        }
+
+        function prevQuestion() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                displayQuestion(currentQuestionIndex);
+            }
+        }
+
+        displayQuestion(currentQuestionIndex);
+    </script>
+    <label>
+        <input type="checkbox">
+        <div class="toggle"></div>
+        <div class="slide">
+            <h1>Menu</h1>
+            <ul>
+                <li><a href="home_page.html" target="_blank">home</a></li>
+                <li><a href="mediu_de_invatare.html" target="_blank">Mediu de invatare</a> </li>
+                <li><a href="test_level.html">Your level in C++</a></li>
+            </ul>
+        </div>
+    </label>
+</body>
+</html>

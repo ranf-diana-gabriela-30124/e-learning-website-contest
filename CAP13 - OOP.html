@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style_capitole.css">
+</head>
+<body>
+    <div class="containter">
+        <div class="white-rectangle">
+            <div class="style_text_heading">Capitolul 13-Programare orientata pe obiecte </div>
+        </div>
+        <label>
+            <input type="checkbox">
+            <div class="toggle"></div>
+            <div class="slide">
+                <h1>Menu</h1>
+                <ul>
+                    <li><a href="home_page.html">home</a></li>
+                    <li><a href="mediu_de_invatare.html">Mediu de invatare</a> </li>
+                    <li><a href="test_level.html">Your level in C++</a></li>
+                </ul>
+            </div>
+        </label>
+    </div>
+    <div class="row">
+        <div class="teorie">
+            <p>Programarea orientată pe obiect în C++ este un paradigma de programare care se bazează pe conceptul 
+                de obiecte și interacțiuni între acestea. La baza sa stă clasa, care este un tip de date definit 
+                de utilizator ce conține atât date (variabile) cât și funcții (metode) care operează asupra 
+                acestor date. În C++, variabilele membru ale unei clase pot fi declarate ca private ( pot fi accesate doar
+                din interiorul clasei), public ( pot fi accesate din orice parte a programului ) sau protected
+                ( depinde daca au dreptul ), controlând astfel accesul la acestea.</p>
+        </div>
+        <div class="containter">
+            <div class="rectangle_code">
+<pre>
+class Elev{
+    private: 
+        int varsta;
+        string nume;
+    public:
+        Elev(){} // constructor implicit ( fara parametrii )
+        ~Elev(){} // destructor implicit ( fara parametrii )
+
+        Elev( string name )
+        { nume = name; } // constructor creat de utilizator
+
+        void setVarsta(int v) 
+        { varsta = v; } // setter pentru variabila privata 
+
+        int getVarsta()
+        { return varsta; } // getter pentru variabila privata
+
+        /// metoda ( functie ) de afisare a datelor elevului
+        void afisare() { cout << "Nume: " << nume << ", Varsta: " << varsta << endl; } 
+        }
+</pre>
+            </div>
+        </div>
+        <div class="teorie">
+            <ul class="square">
+                <li>Interfata </li>
+<pre>
+    class Interfata {
+        public:
+            virtual void afisare() = 0;
+             // metoda pur virtuala 
+            // ( fara nicio implementare )
+        };
+</pre> <br>
+                <li>override </li>
+<pre>
+    class Persoana : public Interfata {
+        public:
+            void afisare() override {
+                ...
+            }
+        };
+</pre>
+            </ul>
+        </div>
+    </div>
+    <div class="spacer"></div>
+    <div class="containter">
+        <div class="style_text_subtitle">Overload</div>
+        <div class="teorie">
+            <ul class="square">
+                <li> Metoda overload = metoda cu acelasi nume, dar semnatura diferita</li>
+<pre>
+    class Calculator {
+        public:
+            int aduna(int a, int b) { return a + b; }
+            int aduna(int a, int b, int c) { return a + b + c; }
+            double aduna(double a, double b) { return a + b; }
+        };
+        
+        int main() {
+            Calculator calc;
+            cout << calc.aduna(2, 3) << ' ' << calc.aduna(2, 3, 4) << ' ' << calc.aduna(2.5, 3.7) << endl;
+            return 0;
+        }
+</pre>
+<div class="container">
+        <div class="rectangle_output">
+            <pre>
+Output:                     
+5 9 6.2
+            </pre>
+        </div> </div>
+                </ul>
+                </p>
+            </ul>
+        </div>
+    </div>
+    <div class="style_text_subtitle"> Pointeri in C++ </div>
+    <div class="teorie">
+        <ul class="square">
+            <li>Definitie</li><p>Un pointer este o variabila care stocheaza adresa ( locul in memorie ) la care se afla o alta variabila.</p>
+            <li>Declarație a unui pointer către un întreg</li> <p> int *ptr;</p>
+            <li>Pointerul ptr conține adresa de memorie a variabilei x</li> <p> int x = 10; int *ptr = &x;</p>
+    </ul>
+    </div>
+</body>
+</html>

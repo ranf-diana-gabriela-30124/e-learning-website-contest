@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style_capitole.css">
+</head>
+
+<body>
+    <div class="containter">
+        <div class="white-rectangle">
+            <div class="style_text_heading"> Capitolul 7 - Algoritmi elementari 1</div>
+        </div>
+        <label>
+            <input type="checkbox">
+            <div class="toggle"></div>
+            <div class="slide">
+                <h1>Menu</h1>
+                <ul>
+                    <li><a href="home_page.html">home</a></li>
+                    <li><a href="mediu_de_invatare.html">Mediu de invatare</a> </li>
+                    <li><a href="test_level.html">Your level in C++</a></li>
+                </ul>
+            </div>
+        </label>
+    </div>
+    <div class="row">
+        <div class="containter">
+            <div class="rectangle_code">
+                <ul class="square">
+                    <li> suma cifrelor unui număr dat </li>
+                </ul> <br>
+                <pre>
+    int suma(int n)
+    {
+        int s=0,c;
+        while(n!=0)
+        {
+            c=n%10;
+            s=s+c;
+            n=n/10;
+        }
+        return s;
+    }
+                </pre>
+            <div class="rectangle_output">
+                Output suma(1234): 10 </div>
+        </div>
+    </div>
+        <div class="containter">
+            <div class="rectangle_code">
+                <ul class="square">
+                    <li> oglinditul unui număr dat </li>
+                </ul> <br>
+                <pre>
+    int oglindit(int a)
+    {
+        int r,x=0;
+        while(a!=0)
+        {
+            r=a%10;
+            a=a/10;
+            x=x*10+r;
+        }
+        return x;
+    }
+                    </pre>
+                <div class="rectangle_output">
+                    Output oglindit(5621): 1265 </div>
+            </div>
+        </div>
+        <div class="containter">
+            <div class="rectangle_code">
+                <ul class="square">
+                    <li> c.m.m.d.c. a 2 nr. (var.1) </li>
+                </ul> <br>
+                <pre>
+    int cmmdc(int a,int b)
+    {
+        while(a!=b)
+            if(a>b)
+                a=a-b;
+            else
+                b=b-a;
+        return a;
+    }
+                    </pre>
+                    <br>
+                    <br>
+                <div class="rectangle_output">
+                    Output cmmdc1(12,100): 4 </div>
+            </div>
+        </div>
+
+        <div class="containter">
+            <div class="rectangle_code">
+                <ul class="square">
+                    <li> c.m.m.d.c. a 2 nr. (var.2) </li>
+                </ul> <br>
+                <pre>
+    int cmmdc2(int a,int b)
+    {
+        int r=0;
+        while(a%b!=0)
+        {
+            r=a%b; 
+            a=b; 
+            b=r;
+        }
+        return b;
+    }                
+                    </pre>
+                <div class="rectangle_output">
+                    Output cmmdc2(12,100): 4 </div>
+            </div>
+        </div>
+
+        <div class="containter">
+            <div class="rectangle_code">
+                <ul class="square">
+                    <li> c.m.m.m.c. a 2 nr. </li>
+                </ul> <br>
+                <pre>
+
+
+
+    int cmmmc(int a,int b)
+    {
+        return a*b/cmmdc(a,b);
+    }               
+                    </pre>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                <div class="rectangle_output">
+                    Output cmmmc(12,100): 300 </div>
+
+            </div>
+        </div>
+
+        </div>
+</body>
+
+</html>

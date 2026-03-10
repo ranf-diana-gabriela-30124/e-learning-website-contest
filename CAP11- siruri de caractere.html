@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<style>
+    .picture{
+        width: 350px;
+        margin: 30px;
+    }
+    .spacer1{
+        height: 740px;
+    }
+    .to_questions{
+			background-color: black;
+            color:#FFDAB9;
+            border-color: #4040a1;
+			border-top-left-radius: 20px;
+			border-bottom-right-radius: 10px;
+            font-size: large;
+            font-family: 'Franklin Gothic Medium';
+            width: 400px;
+            height: 60px;
+            cursor: pointer;
+			z-index: 1;
+			margin-top:30px;
+			justify-content: center;
+		}
+</style>
+<head>
+    <link rel="stylesheet" type="text/css" href="style_capitole.css">
+</head>
+
+<body>
+    <div class="containter">
+        <div class="white-rectangle">
+            <div class="style_text_heading"> Capitolul 11 - siruri de caractere </div>
+            <div class="style_text_subtitle"> Funcţii pentru şiruri de caractere (biblioteca string.h)</div>
+        </div>
+        <label>
+            <input type="checkbox">
+            <div class="toggle"></div>
+            <div class="slide">
+                <h1>Menu</h1>
+                <ul>
+                    <li><a href="home_page.html">home</a></li>
+                    <li><a href="mediu_de_invatare.html">Mediu de invatare</a> </li>
+                    <li><a href="test_level.html">Your level in C++</a></li>
+                </ul>
+            </div>
+        </label>
+    </div>
+    <div class="row">
+        <div class="containter">
+            <div class="rectangle_code">
+                <ul class="square">
+                    <li> strlen(şir)</li> <p>returnează lungimea şirului</p> <br>
+                    <li> strcpy(şir1, şir2 ) </li> <p>copiază şirul2 în locul şirului1</p> <br>
+                    <li> strncpy(şir1, şir2, nr ) </li> <p> copiază primele nr. caractere din şirul2 în locul şirului1 </p> <br>
+                    <li> strcat(şir1, şir2) </li> <p>adaugă şirul2 la sfârşitul  şirului1</p> <br>
+                    <li> strncat (şir1, şir2,  nr)</li> <p>adaugă primele nr caractere ale şirului2 la sfârşitul  şirului1 </p> <br>
+                    <li> strncat (şir1, şir2,  nr)</li> <p>adaugă primele nr caractere ale şirului2 la sfârşitul  şirului1 </p> <br>
+                    <li> strchr(şir, caracter) </li> <p>caută caracterul în şir şi returnează subşirul care începe
+                        cu prima apariţie a caracterului, sau 0 dacă nu este găsit </p> <br>
+                    <li> strrchr(şir1, caracter)</li> <p>caută caracterul în şir şi returnează subşirul care începe 
+                                                    cu ultima apariţie a caracterului sau 0 dacă nu este găsit  </p> <br>
+                    <li> atoi (sir) </li><p> returneaza numărul întreg în care converteşte şirul; dacă nu se poate returnează 0 </p>
+                </ul>
+            </div>
+        </div>
+        <div class="containter">
+                <div class="rectangle_code">
+                    <ul class="square">
+                        <li> strstr(şir1, şir2)</li> <p>caută şirul2 în şirul1 şi returnează subşirul care începe cu prima apariţie a lui şir2 sau 0 dacă nu este găsit</p> <br>
+                        <li> strcmp(şir1, şir2) </li> <p>compara şir1 cu şir2 (comparare alfabetică)</p> <br>
+                        <li> strlwr(şir) </li> <p> converteşte literele mari în litere mici </p> <br>
+                        <li> strupr(şir) </li> <p> converteşte literele mici în litere maris</p> <br>
+                        <li> strrev(şir)</li> <p> inverseaza caracterele sirului(face oglinditul) </p> <br>
+                        <li> strncat (şir1, şir2,  nr)</li> <p>adaugă primele nr caractere ale şirului2 la sfârşitul  şirului1 </p> <br>
+                        <li> toupper(caracter)  </li> <p>transformă în majusculă caracterul, dacă acesta e o literă mică </p> <br>
+                        <li> tolower(caracter)</li> <p>transformă în literă mică caracterul, dacă acesta e o literă mare  </p> <br>
+                        <li> itoa(numar, sir, baza) </li><p> converteşte numărul în şir considerând baza de numeraţie precizată</p>
+                    </ul>
+                </div>
+        </div>
+        </div>
+        <div class="spacer1"></div>
+    <div class="containter">
+        <div class="style_text_subtitle">Citirea sirurilor de cractere</div>
+        <div class="teorie">
+            <ul class="square">
+                <li> Şiruri care nu conţin spaţiu </li> <p> char variabila[număr]; cin>>variabilă; </p>
+                <li> Şiruri care conţin spaţiu: </li> 
+                <p>
+                    cin.get(variabilă ,nr ); //citeste până la sfârşit de rând (fără a citi si sfârşitul de linie) sau <br>
+                    cin.getline(variabila,nr); //citeste până la sfârşit de rând (citind inclusiv sfârşitul de linie)
+                </p>
+            </ul>
+        </div>
+    </div>
+
+    <div class="containter">
+        <div class="style_text_subtitle">Afisarea sirurilor de caractere</div>
+        <div class="teorie">
+            <p> char variabila[număr]; sau char *variabila; cout&lt;&lt;variabila; </p>
+        </div>
+        <a href="Chestionar CAP11.html" target="_blank">
+            <button class="to_questions"> Exercitii siruri de caractere </button>
+        </a>
+    </div>
+
+</body>
+
+</html>

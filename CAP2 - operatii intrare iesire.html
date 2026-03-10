@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<style>
+    .picture {
+        height: 300px;
+        margin: 40px;
+    }
+    .spacer1{
+        height: 580px;
+    }
+</style>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style_capitole.css">
+</head>
+
+<body>
+    <div class="containter">
+        <div class="white-rectangle">
+            <div class="style_text_heading"> Capitolul 2 - operatii intrare/iesire </div>
+        </div>
+        <label>
+            <input type="checkbox">
+            <div class="toggle"></div>
+            <div class="slide">
+                <h1>Menu</h1>
+                <ul>
+                    <li><a href="home_page.html">home</a></li>
+                    <li><a href="mediu_de_invatare.html">Mediu de invatare</a> </li>
+                    <li><a href="test_level.html">Your level in C++</a></li>
+                </ul>
+            </div>
+        </label>
+    </div>
+    <div class="row">
+        <div class="teorie">
+            <ul class="square">
+                <li> operații de intrare: datele intră în program, programul citește date</li>
+                <br>
+                <p> cin = stream standard de intrare ( introducem datele de la tastatura ).
+                    cin se folosește împreună cu operatorul de extragere >>. Caracterele vor fi
+                    introduse doar dupa tastarea tastei enter<br>
+                <br>
+                    Exemple: <br>
+                    cin >> x >> y; <br>
+                    cin >> a;
+
+                </p>
+
+            </ul>
+        </div>
+
+        <div class="rectangle_code">
+            <ul class="square">
+                <li> operații de ieșire: datele ies din program, programul afișează date </li>
+                <br>
+                <p> cout = stream standard de ieșire ( afisam datele pe ecran ) cout se folosește
+                    împreună cu operatorul de inserție &lt;&lt; <br>
+                <br>
+                    Exemple: <br>
+                    int x=3; <br>
+                    cout &lt;&lt; "Hello world"; <br>
+                    cout &lt;&lt; 23 &lt;&lt; endl; <br>
+                    cout &lt;&lt; x; // afiseaza pe ecran valoarea variabilei x <br>
+                    cout &lt;&lt; " Let's learn C++ !!";
+                </p>
+                <div class="rectangle_output">
+                    Output: <br>
+                    Hello world23 <br>
+                    3 Let's learn C++ !!
+                </div>
+            </ul>
+        </div>
+        <div class="teorie">
+                <img class="picture" src="picture_C++.png">
+        </div>
+    </div>
+
+    <div class="spacer1"></div>
+    <div class="containter">
+        <div class="style_text_subtitle"> Operatii de intrare/iesire cu fisiere</div>
+        <div class="teorie">
+            <ul class="square">
+                <p> Pentru început, vom analiza etapele folosirii fisierelor in C++. Asigurati-va ca aveti inclusa biblioteca 'fstream' in proiect.</p>
+                <p>
+                    <li>deschiderea fisierului</li>
+                <p> ofstream - stream-ul pentru fluxul de iesire ( vrem sa afisam ceva in fisier ) si ifstream pentru 
+                    stream-ul de intrare ( citim un continut din fisierul propriu-zis ) <br>
+                <br> 
+                    Exemplu: <br>
+                    ifstream fin("fisier.in"); <br>
+                    ofstream fout("fisier.out");
+                </p>
+                <li>Citirea si scrierea in fisier</li>
+                <br>
+                <p>Exemplu: <br>
+                    int x;
+                    fin >> x;
+                    fout &lt;&lt; 2 * x;
+                <br>
+                </p>
+                <br>
+                <li>Inchiderea fisierelor: </li>
+                <br>
+                <p>Exemplu: <br>
+                    fin.close(); <br>
+                    fout.close();
+                </p>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<style>
+    .arrow{
+        height: 50px;
+        background:none;
+    }
+</style>
+<head>
+    <link rel="stylesheet" type="text/css" href="style_capitole.css">
+</head>
+<body>
+    <div class="containter">
+        <div class="white-rectangle">
+            <div class="style_text_heading"> Capitolul 1 - Introducere in C++ </div>
+        </div>
+        <label>
+            <input type="checkbox">
+            <div class="toggle"></div>
+            <div class="slide">
+                <h1>Menu</h1>
+                <ul>
+                    <li><a href="home_page.html">home</a></li>
+                    <li><a href="mediu_de_invatare.html">Mediu de invatare</a> </li>
+                    <li><a href="test_level.html">Your level in C++</a></li>
+                </ul>
+            </div>
+        </label>
+    </div>
+    <div class="row">
+        <div class="teorie">
+            <p>Limbajul C++ a fost inventat de către Bjarne Stroustrup în 1979, ca o extindere a limbajului C.
+                Programul scris într-un limbaj de programare se numește program sursă și trebuie tradus într-un limbaj
+                pe care îl înțelege procesorul, numit cod mașină, sau program executabil.
+                Pentru anumite limbaje de programare operația de traducere se numește compilare (cazul lui C, C++,
+                Pascal, etc.).
+                Această operație este realizată de un compilator.</p>
+        </div>
+        <div class="containter">
+            <div class="rectangle_code">
+                <pre>
+        // primul program C++ ( acesta este un comentariu pe o linie )  
+        #include &lt;iostream&gt;                                       
+        using namespace std;                                            
+        int main()                                                        
+        {                                                               
+            /* Acesta este un                                           
+            comentariu de tip bloc                                      
+            ( pe mai multe linii )                                      
+            */  
+            cout &lt;&lt; "Hello world!" &lt;&lt; endl;                             
+            cout &lt;&lt; "Acesta este primul program in C++.";         
+            return 0;                                                   
+        }                                                               
+                </pre>
+                <div class="rectangle_output">
+                    Output: <br>
+                    Hello world! <br>
+                    Acesta este primul program in C++.
+                </div>
+            </div>
+        </div>
+        <div class="teorie">
+            <ul class="square">
+                <p>Etapele scrierii unui program în C++ sunt:</p>
+                <li>editarea programului C++; </li>
+                <p>se obține fișierul sursă cu extensia .cpp </p>
+                <li>compilarea fișierului sursă; </li>
+                <p>consta in verificarea corectitudini sintactice a programului ; se va
+                    obține astfel fișierul obiect, cu extensia .o sau .obj</p>
+                <li>editarea de legături; </li>
+                <p>se stabilesc legături între fișierele .obj; se va obține astfel programul
+                    executabil cu extensia .exe;</p>
+                <li>executarea programului;</li>
+            </ul>
+        </div>
+    </div>
+    <div class="spacer"></div>
+    <div class="containter">
+        <div class="style_text_subtitle">Componentele programului C++</div>
+        <div class="teorie">
+            <ul class="square">
+                <p> Pentru început, vom analiza componentele programului prezentat.</p>
+                <p>
+                    <li>#include&lt;iostream&gt;</li>
+                <p>Liniile care încep cu # se numesc directive preprocesor. <br>Astfel, #include adaugă header-ul iostream
+                    care permite operațiile de scriere și afișare.</p>
+                <li>int main()</li>
+                <p>Declararea funcției principale care este apelată mereu prima în momentul executiei programului.<br>
+                    Corpul funcției este delimitat de blocul de acolade. Între acolade se pot scrie anumite
+                    instrucțiuni, fiecare fiind urmată de semnul ;.</p>
+                <li>cout&lt;&lt;...&lt;&lt;endl;</li>
+                <p>Instrucțiunea ce realizează afișarea unui mesaj sau a unei variabile, urmată de un enter pentru a
+                    trece la următoarea linie (endl).</p>
+                <li>return 0;</li>
+                <p>
+                    Instrucțiunea care marchează finalul executiei programului, valoarea 0 indicând terminarea cu
+                    succes. </p>
+                <p>Există două tipuri de comentarii:
+                <ul>
+                    <li>// comentariu pe o linie - poate fi scris pe o singură linie</li>
+                    <li>/* comentariu de tip bloc */ - poate fi scris pe mai multe linii</li>
+                </ul>
+                </p>
+            </ul>
+        </div>
+    </div>
+    <div class="style_text_subtitle"> Codul ASCII in C++ </div>
+    <div class="teorie">
+        <ul class="square">
+        <p>
+            Fiecarui caracter ii corespunde un cod ASCII ( un numar reprezentativ pentru caracterul propriu-zis). 
+            Aceste numere se afla in intervalul 0-127 si se impart in doua mari categorii:
+            <li>caractere imprimabile ( codurile ASCII 32-126 inclusiv) </li>
+            <p> <br>literele mari: A ... Z<br>
+                literele mici: a ... z<br>
+                cifrele 0 .. 9<br> 
+                semnele de punctuaţie .,:;!?'"<br>
+                caractere ce reprezintă operaţii aritmetice sau de alt tip: + - / * &lt; &gt; = (){}[] <br>
+                alte caractere: ~`@#$%^&_\|, caracterul spaţiu (32) </p><br>
+            <li>caracterele neimprimabile, sau de control ( codurile 0 - 31 și 127 ) </li>
+            <p>Caracterele neimprimabile nu au o reprezentare grafică bine determinată, depinzand de sistemul de operare folosit. <br> Exemple: <br>
+            caracterul cu codul 0, numit și caracter nul, notat în C++ cu '\0' ( finalul unui sir de caractere in memorie)<br>
+            caracterul cu codul 10, numit Line Feed, notat în C++ cu '\n' (trecerea la rând nou la afiasrea pe ecran sau in fisier). </p>
+        </p>
+    </ul>
+    <br>
+    <a href="ASCII.jpg" target="_blank"> CLICK aici pentru a vedea tabelul cu codurile ASCII corespunzatoare fiecarui caracter.</a>
+    </div>
+    <div class="style_text_subtitle">Tipuri de date in C/C++</div>
+    <div class="teorie"> <img src="tipuri_de_date.jpg" style="filter: brightness(86%);">
+    <p><br> Exista de asemenea si tipuri de date derivate precum tablou, structura, clasa, enumerare. </p></div>
+    <a href="Chestionar CAP1.html" target="_blank">
+        <button class="to_questions"> Exercitii tipuri de date </button>
+    </a>
+    
+</body>
+</html>

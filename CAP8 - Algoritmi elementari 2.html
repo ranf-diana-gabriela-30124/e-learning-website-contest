@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<style>
+    .picture{
+        width: 350px;
+        margin: 30px;
+    }
+</style>
+<head>
+    <link rel="stylesheet" type="text/css" href="style_capitole.css">
+</head>
+
+<body>
+    <div class="containter">
+        <div class="white-rectangle">
+            <div class="style_text_heading"> Capitolul 8 - Algoritmi elementari 2 </div>
+        </div>
+        <label>
+            <input type="checkbox">
+            <div class="toggle"></div>
+            <div class="slide">
+                <h1>Menu</h1>
+                <ul>
+                    <li><a href="home_page.html">home</a></li>
+                    <li><a href="mediu_de_invatare.html">Mediu de invatare</a> </li>
+                    <li><a href="test_level.html">Your level in C++</a></li>
+                </ul>
+            </div>
+        </label>
+    </div>
+    <div class="row">
+        <div class="containter">
+            <div class="rectangle_code">
+                <ul class="square">
+                    <li> tipărirea divizorilor unui număr </li>
+                </ul> <br>
+                <pre>
+    void divizori(int n)
+    {
+        int i;
+        for(i=1;i&lt;=n;i++)
+        {
+            if(n%i==0)
+                cout&lt;&lt;i&lt;&lt;" ";
+         } 
+    }
+
+    
+
+
+                </pre>
+                <div class="rectangle_output">
+                    Output divizori(12): 1 2 3 4 6 12 </div>
+            </div>
+        </div>
+        <div class="containter">
+            <div class="rectangle_code">
+                <ul class="square">
+                    <li> tipărirea divizorilor proprii </li>
+                </ul> <br>
+                <pre>
+    void propriu(int l)
+    {
+        int i;
+        for(i=2;i&lt;=l/2;i++)
+        {
+            if(l%i==0)
+            cout&lt;&lt;i&lt;&lt;" ";
+        } 
+   }
+
+
+
+
+                </pre>
+                <div class="rectangle_output">
+                    Output propriu(12): 2 3 4 6 </div>
+            </div>
+        </div>
+        <div class="containter">
+            <div class="rectangle_code">
+                <ul class="square">
+                    <li> verificare numar prim </li>
+                </ul> <br>
+                <pre>
+    int prim (int p)
+    {
+        int i,r;
+        if(p==1)
+            return 0;
+        else
+            for(i=2;i&lt;=p/2;i++)
+                if(p%i==0)
+                    return 0;
+        return 1;   
+    }               
+    
+    
+                    </pre>
+                <div class="rectangle_output">
+                    Output prim(12): 0 <br>
+                    Output prim(13): 1
+                 </div>
+            </div>
+        </div>
+
+        <div class="containter">
+            <div class="rectangle_code">
+                <ul class="square">
+                    <li> elementul n din sirul lui Fibonnaci </li>
+                </ul> <br>
+                <pre>
+    int fibo(int n)
+    {
+        int a,b,c,i;
+        a=1;
+        b=1;
+        for(i=3;i<=n;i++)
+        {
+            c=a+b;
+            a=b;
+            b=c;
+        }
+        return c;
+}          
+                    </pre>
+                <div class="rectangle_output">
+                    Output fibo(7): 13  </div>
+            </div>
+        </div>
+    <div class="teorie">
+        Numerele Fibonacci sunt numere naturale care fac parte din următorul șir,
+        în care fiecare număr este egal cu suma celor două de dinainte: 1, 1, 2, 
+        3, 5, 8, 13, 21, 34, 55, 89, 144,...
+        <img class="picture" src="fibo.png">
+    </div>
+    </div>
+</body>
+
+</html>

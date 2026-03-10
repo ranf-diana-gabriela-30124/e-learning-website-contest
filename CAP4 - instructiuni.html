@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style_capitole.css">
+</head>
+
+<body>
+    <div class="containter">
+        <div class="white-rectangle">
+            <div class="style_text_heading"> Capitolul 4 - Instructiuni in C++ </div>
+        </div>
+        <label>
+            <input type="checkbox">
+            <div class="toggle"></div>
+            <div class="slide">
+                <h1>Menu</h1>
+                <ul>
+                    <li><a href="home_page.html">home</a></li>
+                    <li><a href="mediu_de_invatare.html">Mediu de invatare</a> </li>
+                    <li><a href="test_level.html">Your level in C++</a></li>
+                </ul>
+            </div>
+        </label>
+    </div>
+    <div class="row">
+            <div class="teorie">
+                <p>
+                <ul class="square">
+                    <li> Instructiunea if ( structura alternativa ) </li>
+                    <p> Aceasta instructiune este o structura de decizie.
+                        Daca conditia/expresia din if are valoarea 0 (este falsa), se vor executa instructiunile
+                        de pe ramura else. In caz contrar ( conditia este adevarata ), se vor executa instructiunile de
+                        pe ramura if.
+                    </p> <br>
+                    <pre>
+    if( expresie )
+    { instructiuni; }
+    else 
+    { instructiuni;}
+                    </pre>
+                </ul>
+                </p>
+        </div>
+            <div class="rectangle_code">
+                <ul class="square">
+                    <li> Instrucțiunea switch ( structura alternativa )</li>
+                    <p>
+                        Mod de executie: <br>
+                        Se evaluează conditia. Dacă valoarea acesteia este egală cu una dintre valorile constante din
+                        case,
+                        se execută instrucțiunile corespunzatoare, apoi se iasa din switch.
+                        Dacă valoarea expresiei nu este egală cu niciuna dintre valorile constante, se verifică
+                        existența clausei default;
+                    </p> <br>
+                    <pre>
+    switch ( Expresie )
+    {
+        case Constanta_1: Grup_Instructiuni_1 ; break;
+        case Constanta_2: Grup_Instructiuni_2 ; break;
+        …
+        case Constanta_N: Grup_Instructiuni_N; break;
+        default: Grup_Instructiuni_default; break;
+    }
+                    </pre>
+                </ul>
+            </div>
+            <div class="teorie">
+                <ul class="square">
+                    <p> Structurile repetitive pot fi: </p>
+                    <li> cu număr cunoscut de pași (iterații)</li>
+                    <li> cu număr necunoscut de pași (iterații) </li>
+                    <p> Structurile cu nr. necunoscut de pasi pot fi cu test initial sau cu test final. </p>
+                    <p> Instructiunile repetitive sunt: </p>
+                    <li> while : </li> <p>număr necunoscut de pași și test inițial;</p>
+                    <li> do...while : </li> <p> număr necunoscut de pași și test final;</p>
+                    <li>for :</li> <p> număr cunoscut de pași și test inițial; </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    <div class="spacer"></div>
+    <div class="containter">
+        <div class="style_text_subtitle">Instructiunea while</div>
+        <div class="teorie">
+            <ul class="square">
+            <pre>
+    while( conditie )
+    { instructiuni }
+            </pre>
+            <li>Mod de executie:</li> <p>Daca conditia este adevarata, se executa instructiunile, apoi se revine la conditia initiala si se verifica valoarea ei de adevar. <br>
+                In momentul in care conditia nu este indeplinita, se va iesi din bucla while.
+            </p>
+            </ul>
+        </div>
+    </div>
+    <div class="containter">
+        <div class="style_text_subtitle">Instructiunea do...while</div>
+        <div class="teorie">
+            <ul class="square">
+            <pre>
+    do{
+        instructiune;
+    }while( conditie );
+            </pre>
+            <li>Mod de executie:</li> <p>se executa prima data instructiunea, iar apoi se verifica conditia. 
+                Se reia bucla si se execta instructiunile pana cand conditia finala este falsa. </p>
+            </ul>
+        </div>
+    </div>
+
+    <div class="containter">
+        <div class="style_text_subtitle">Instructiunea for</div>
+        <div class="teorie">
+            <ul class="square">
+            <pre>
+    for (Expresie_de_Initializare ; Expresie_de_Testare ; Expresie_de_Continuare)
+    {
+        Instructiuni;
+    }
+            </pre>
+            <li>Mod de executie:</li> 
+            <p>Se evalueaza expresia de intializare si apoi se verifica valoarea de adevar a expresiei de testare.<br>
+            Se evalueaza expresia de continuare, iar apoi se verifica din nou valoarea de adevar a expresiei de testare. <br>
+            Daca aceasta este adevarata, se fac in continuare instructiunile. In caz contrar, se iese din bucla for.
+         </p>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

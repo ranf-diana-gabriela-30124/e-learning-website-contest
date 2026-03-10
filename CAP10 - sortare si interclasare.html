@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        .picture{
+            width: 500px;
+            margin-top: 40px;
+        }
+    </style>
+<head>
+    <link rel="stylesheet" type="text/css" href="style_capitole.css">
+</head>
+
+<body>
+    <div class="containter">
+        <div class="white-rectangle">
+            <div class="style_text_heading"> Capitolul 10 - Interclasare si BubbleSort </div>
+        </div>
+        <label>
+            <input type="checkbox">
+            <div class="toggle"></div>
+            <div class="slide">
+                <h1>Menu</h1>
+                <ul>
+                    <li><a href="home_page.html">home</a></li>
+                    <li><a href="mediu_de_invatare.html">Mediu de invatare</a> </li>
+                    <li><a href="test_level.html">Your level in C++</a></li>
+                </ul>
+            </div>
+        </label>
+    </div>
+    <div class="row"> 
+        <div class="rectangle_code">
+            <ul class="square">
+                <li> Metoda bulelor ( Bubble Sort )</li>
+                <p> Descrierea metodei: Se parcurge în mod repetat vectorul  şi se compară elementele vecine, 
+                    iar dacă nu sunt în ordine bună se interschimbă .Repetiţia se încheie când nu s-a mai 
+                    făcut nici o interschimbare.
+                </p>
+                <pre>
+
+    j=0;
+    do
+    {
+        k=0;  
+        j++;
+        for(i=0;i&lt;n-j;i++)
+            if(a[i]>a[i+1])
+            { 
+                x=a[i];
+                a[i]=a[i+1];
+                a[i+1]=x;
+                k=1;
+            }
+    }
+    while(k==1);
+
+                </pre>
+            </ul>
+        </div>
+
+        <div class="rectangle_code">
+                <img class="picture" src="bubble-sort.png">
+        </div>
+
+        <div class="rectangle_code">
+            <ul class="square">
+                <li> Interclasarea a 2 vectori </li>
+                <p> Descrierea metodei: Pornind de la doi vectori ordonaţi după acelaşi criteriu se cere formarea 
+                    unui al treilea vector cu elementele primilor 2, elementele celui de-al treilea vector fiind 
+                    de asemenea ordonate.
+                </p>
+                <pre>
+
+    void interclasare(int a[],int n,int b[],int m,int c[])
+    {
+        int i=0,j=0,k=0;
+        while(i&lt;n && j&lt;m )
+            if (a[i] &lt; b[j]) c[k++]=a[i++];
+            else c[k++]=b[j++];
+            if (i&lt;n) 
+                for(j=i;j&lt;n;j++) c[k++]=a[j];
+            else 
+                for(i=j;i&lt;n;i++) c[k++]=b[i];
+    }               
+                </pre>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
